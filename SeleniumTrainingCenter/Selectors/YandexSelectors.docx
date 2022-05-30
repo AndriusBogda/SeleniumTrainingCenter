@@ -1,1 +1,62 @@
-﻿
+﻿Start Page:
+	Search input:
+		css:input[class='input__control input__input mini-suggest__input']
+		xpath://input[@class='input__control input__input mini-suggest__input']
+	Find Button:
+		css:button[class='button mini-suggest__button button_theme_search button_size_search i-bem button_js_inited']
+		xpath://button[@class='button mini-suggest__button button_theme_search button_size_search i-bem button_js_inited']
+
+Email Page:
+	Write email button:
+		css:i[class='b-toolbar__but__i'][value='Compose']
+		xpath://i[@class='b-toolbar__but__i' and text()='Compose']
+	Logout link:
+		css:a[class='b-header__link b-header__link_exit']
+		xpath://a[@class='b-header__link b-header__link_exit']
+	Settings link:
+		css:a[href='/lite/setup']
+		xpath://a[@href='/lite/setup']
+	Inbox, Sent, Trash, Spam, Draft:                
+		css:div[aria-label='Папки']                                    
+		xpath://div[@aria-label='Папки']
+	Inbox, Deleted, Spam, Draft:
+		css:span[role='presentation'][value!='Sent']
+		xpath://span[@role='presentation' and text()!='Sent']
+
+New email page:
+	To input:
+		css:
+		xpath:
+	Topic input:
+		css:
+		xpath:
+	Find button:
+		css:
+		xpath:
+	Add multiple attachments button:
+		css:
+		xpath:
+	Send, Save, Cancel:										(Choose Files, Save and send ??)	<------------ IS THIS CORRECT?
+		css:div[class='b-buttons']							<------------ IS THIS CORRECT?
+		xpath://input[@class='b-compose__file']/..			<------------ IS THIS CORRECT?
+	Update locator:
+		Send, Save, Cancel:
+			css:
+			xpath:
+	Update locator:
+		Send, Save, Cancel:
+			css:
+			xpath:
+	Update locator:
+		Send, Save:
+			xpath:
+	Update locator:
+		Choose Files, Save, Cancel:
+			css:
+			xpath:
+
+Sent page:
+	Even links to topics starting from 4th email:
+		css:
+	All links to topics starting from 2nd email:
+		xpath:
