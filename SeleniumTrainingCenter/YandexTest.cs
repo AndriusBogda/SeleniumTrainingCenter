@@ -42,7 +42,7 @@ namespace SeleniumTrainingCenter
 
             var yandexPage = await GetLoggedInYandexPage(_login, _password);
 
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual("SeleniumTestAndrius", yandexPage.GetElementTextByXPath(USERNAME_ELEMENT));
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(_login, yandexPage.GetElementTextByXPath(USERNAME_ELEMENT));
         }
     }
 }
