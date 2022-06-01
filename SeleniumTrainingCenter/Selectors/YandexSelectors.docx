@@ -1,17 +1,17 @@
 ﻿Start Page:
 	Search input:
-		css:input[class='input__control input__input mini-suggest__input']
+		css:input.input__control input__input mini-suggest__input
 		xpath://input[@class='input__control input__input mini-suggest__input']
 	Find Button:
-		css:button[class='button mini-suggest__button button_theme_search button_size_search i-bem button_js_inited']
+		css:button.button mini-suggest__button button_theme_search button_size_search i-bem button_js_inited
 		xpath://button[@class='button mini-suggest__button button_theme_search button_size_search i-bem button_js_inited']
 
 Email Page:
 	Write email button:
-		css:i[class='b-toolbar__but__i'][value='Compose']
+		css:i.b-toolbar__but__i[value='Compose']
 		xpath://i[@class='b-toolbar__but__i' and text()='Compose']
 	Logout link:
-		css:a[class='b-header__link b-header__link_exit']
+		css:a.b-header__link b-header__link_exit
 		xpath://a[@class='b-header__link b-header__link_exit']
 	Settings link:
 		css:a[href='/lite/setup']
@@ -25,10 +25,10 @@ Email Page:
 
 New email page:
 	To input:
-		css:input[id='id1166632253349']
+		css:#id1166632253349 input
 		xpath://input[@id='id1166632253349']
 	Topic input:
-		css:input[id='id1166632253334']
+		css:#id1166632253334 input
 		xpath://input[@id='id1166632253334']
 	Find button:
 		css:input[name='search']
@@ -37,26 +37,26 @@ New email page:
 		css:button[value="multy-att"]
 		xpath://button[@value="multy-att"]
 	Send, Save, Cancel:
-		css:div[class='b-buttons']
+		css:div.b-buttons'
 		xpath://div[@class='b-buttons']
 	Update locator:
 		Send, Save, Cancel:										(Choose Files, Save and send ??)	<------------ IS THIS CORRECT?
-			css:div[class='b-buttons']							<------------ IS THIS CORRECT?
+			css:div.b-buttons									<------------ IS THIS CORRECT?
 			xpath://input[@class='b-compose__file']/..			<------------ IS THIS CORRECT?
 	Update locator:
 		Send, Save, Cancel:
-			css:div[class='b-buttons']
+			css:div.b-buttons
 			xpath://button[@name='nosend']/../..
 	Update locator:
 		Send, Save:
 			xpath://input[contains(@class, 'b-compose__cancel')]/preceding-sibling::input[@type='submit']
 	Update locator:
 		Choose Files, Save, Cancel:
-			css:div[class='b-buttons']
+			css:div.b-buttons
 			xpath://div[@class='b-buttons']/input/..
 
 Sent page:
 	Even links to topics starting from 4th email:
-		css:a[class='b-messages__message__link'](2n+4)                 <-------- not sure if this is the right syntax
+		css:a.b-messages__message__link:nth-of-type(2n+4)                 <-------- not sure if this is the right syntax
 	All links to topics starting from 2nd email:
 		xpath:(//a[@class='b-messages__message__link'])[2]/following::a[@class='b-messages__message__link']
