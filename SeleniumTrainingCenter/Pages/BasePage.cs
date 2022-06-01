@@ -9,9 +9,9 @@ namespace SeleniumTrainingCenter.Pages
         protected IWebDriver _driver;
         protected IWebElement GetElementByXPath(string xPath)
         {
-            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(3));
+            WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
 
-            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath(xPath)));
+            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(xPath)));
         }
         public BasePage(IWebDriver driver)
         {
