@@ -42,7 +42,9 @@ namespace SeleniumTrainingCenter
 
             var yandexPage = await GetLoggedInYandexPage(_login, _password);
 
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(_login, yandexPage.GetElementTextByXPath(USERNAME_ELEMENT));
+            string AssertFailedMessage = "Could not log in Yangex mail with given username/password";
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(_login, yandexPage.GetElementTextByXPath(USERNAME_ELEMENT), AssertFailedMessage);
         }
     }
 }
