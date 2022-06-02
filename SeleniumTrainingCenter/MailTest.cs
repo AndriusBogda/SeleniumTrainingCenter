@@ -11,7 +11,7 @@ namespace SeleniumTrainingCenter
         [Test]
         public void TestLoginToGmail()
         {
-            string assertFailedMessage = "Could not find username element";
+            string assertFailedMessage = "Could not find email element";
 
             string email = "emailtesting4565@gmail.com";
             string password = "testingpassword";
