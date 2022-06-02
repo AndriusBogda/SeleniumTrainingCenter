@@ -10,7 +10,7 @@ namespace SeleniumTrainingCenter.Pages
         {
             IWebElement multiselect = GetElementByXPath(xPath);
 
-            return multiselect.FindElements(By.XPath("//option"));
+            return multiselect.FindElements(By.XPath($"{xPath}/option"));
         }
 
         public List<string> GetMultiselectOptionsByXPath(string xPath)
@@ -19,10 +19,17 @@ namespace SeleniumTrainingCenter.Pages
 
             foreach (var element in GetMultiselectOptionsCollectionByXPath(xPath))
             {
-                list.Add(element.GetCssValue("value")); 
+                list.Add(element.Text);
             }
 
             return list;
+        }
+
+        public bool DoesOptionExist(string value)
+        {
+            string xPath = $"//option[@value='{value}']";
+
+            return GetElementByXPath(xPath).Displayed;
         }
 
         public MultiselectPage(IWebDriver driver, string url) : base(driver, url)

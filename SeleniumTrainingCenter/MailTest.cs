@@ -29,7 +29,17 @@ namespace SeleniumTrainingCenter
         [Test]
         public void TestMultiSelect()
         {
+            string URL = @"https://demo.seleniumeasy.com/basic-select-dropdown-demo.html";
+            string MULTISELECT = "//*[@id='multi-select']";
 
+            var multiselectPage = new MultiselectPage(Driver, URL);
+
+            var options = multiselectPage.GetMultiselectOptionsByXPath(MULTISELECT);
+
+            foreach (var option in options)
+            {
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(multiselectPage.DoesOptionExist(option), "option could not be located");
+            }
         }
     }
 }
