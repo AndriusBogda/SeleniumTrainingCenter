@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 
 namespace SeleniumTrainingCenter.Pages
@@ -11,7 +12,7 @@ namespace SeleniumTrainingCenter.Pages
         {
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
 
-            return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath(xPath)));
+            return wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(xPath)));
         }
         public BasePage(IWebDriver driver)
         {

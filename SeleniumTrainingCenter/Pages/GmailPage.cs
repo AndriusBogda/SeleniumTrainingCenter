@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTrainingCenter.Pages
 {
@@ -28,9 +29,16 @@ namespace SeleniumTrainingCenter.Pages
             string ICON_ELEMENT = "//*[@class='gb_Ba gbii']";
             string EMAIL_ELEMENT = "//*[@class='DmBVvf ZWVAt']";
 
-            GetElementByXPath(ICON_ELEMENT).Click();
-            var a = GetElementByXPath(EMAIL_ELEMENT);
-            return GetElementByXPath(EMAIL_ELEMENT).Text;
+            IWebElement TryGetEmail()
+            {
+                WebDriverWait wait = new WebDriverWait(_driver, System.TimeSpan.FromSeconds(10));
+
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath(ICON_ELEMENT))).Click();
+
+                return wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath(EMAIL_ELEMENT)));   // CANT LOCATE ELEMENT
+            }
+
+            return TryGetEmail().Text;
         }
     }
 }

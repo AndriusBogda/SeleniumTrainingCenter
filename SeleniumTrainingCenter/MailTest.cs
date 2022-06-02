@@ -20,11 +20,16 @@ namespace SeleniumTrainingCenter
             var gmailPage = new GmailPage(Driver, gmailLoginPageUrl);
 
             var LoggedInGmailPage = gmailPage.Login(email, password);
-
-            Thread.Sleep(System.TimeSpan.FromSeconds(5)); // implicit waiter
             var loggedEmail = LoggedInGmailPage.GetLoggedInUserEmail();
 
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(email, loggedEmail , assertFailedMessage);
+            Thread.Sleep(System.TimeSpan.FromSeconds(5)); // implicit waiter
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(email, loggedEmail , assertFailedMessage); // Cant find the reason why element does not get found -> GmailPage.cs
+        }
+        [Test]
+        public void TestMultiSelect()
+        {
+
         }
     }
 }
