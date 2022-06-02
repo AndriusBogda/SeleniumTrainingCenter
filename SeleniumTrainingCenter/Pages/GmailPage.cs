@@ -9,7 +9,7 @@ namespace SeleniumTrainingCenter.Pages
         {
         }
 
-        public GmailPage Login(string email, string password)
+        public override GmailPage Login(string email, string password)
         {
             string EMAIL_INPUT = "//input[@class='whsOnd zHQkBf' and @type='email']";
             string PASSWORD_INPUT = "//input[@name='password']";
