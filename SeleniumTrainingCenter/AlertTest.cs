@@ -10,12 +10,13 @@ namespace SeleniumTrainingCenter
         private AlertPage alertPage;
 
         [SetUp]
-        public void Setup()
+        public void SetupTwo()
         {
             string URL = @"https://demo.seleniumeasy.com/javascript-alert-box-demo.html";
 
             alertPage = new AlertPage(Driver, URL);
         }
+
         [Test]
         public void TestAlertIsPresent()
         {
@@ -25,6 +26,7 @@ namespace SeleniumTrainingCenter
 
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(OpenedAlertOnPage.IsAlertPresent());
         }
+
         [Test]
         public void TestAlertStateTrue()
         {
@@ -34,6 +36,7 @@ namespace SeleniumTrainingCenter
 
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(OpenedAlertOnPage.IsAlertSameState(true));
         }
+
         [Test]
         public void TestAlertStateFalse()
         {
@@ -52,6 +55,7 @@ namespace SeleniumTrainingCenter
 
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(confirmedAlertPage.GetConfirmBoxAnser(ALERT_ANSWER_ELEMENT), "You pressed OK!");
         }
+
         [Test]
         public void TestAlertCancel()
         {

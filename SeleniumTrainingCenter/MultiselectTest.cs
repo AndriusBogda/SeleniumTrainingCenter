@@ -22,6 +22,7 @@ namespace SeleniumTrainingCenter
                 Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(multiselectPage.DoesOptionExist(option), "option could not be located");
             }
         }
+
         [Test]
         public void TestEmployeeList()
         {

@@ -10,6 +10,7 @@ namespace SeleniumTrainingCenter.Entities
     {
         public string Postion { get; set; }
         public string Office { get; set; }
+
         public Employee(string name, string postion, string office) : base(name)
         {
             Postion = postion;

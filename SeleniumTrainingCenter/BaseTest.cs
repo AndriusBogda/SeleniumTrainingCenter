@@ -6,11 +6,17 @@ namespace SeleniumTrainingCenter
 {
     public class BaseTest
     {
-        private static readonly IWebDriver _driver = new ChromeDriver();
+        private static IWebDriver _driver;
 
         protected static IWebDriver Driver
         {
             get => _driver;
+        }
+
+        [SetUp]
+        public static void Setup()
+        {
+            _driver = new ChromeDriver();
         }
 
         [TearDown]

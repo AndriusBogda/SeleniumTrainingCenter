@@ -17,6 +17,7 @@ namespace SeleniumTrainingCenter.Pages
 
             return wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.CssSelector(cssSelector)));
         }
+
         public List<Employee> GetListOfEmployeesWhereAgeMoreAndSalaryLessOrEqual(string cssSelector, int age, int salary)
         {
             List<Employee> employees = new List<Employee>();
@@ -45,9 +46,11 @@ namespace SeleniumTrainingCenter.Pages
 
             return employees;
         }
+
         public TablePage(IWebDriver driver) : base(driver) 
         { 
         }
+
         public TablePage(IWebDriver driver, string url) : base(driver, url)
         {
         }

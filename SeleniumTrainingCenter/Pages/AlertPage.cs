@@ -13,6 +13,7 @@ namespace SeleniumTrainingCenter.Pages
 
             return this;
         }
+
         public bool IsAlertPresent()
         {
             IAlert GetAlertIsPresent()
@@ -33,6 +34,7 @@ namespace SeleniumTrainingCenter.Pages
                 return false;
             }
         }
+
         public bool IsAlertSameState(bool state)
         {
             bool GetAlertState(bool state)
@@ -55,12 +57,14 @@ namespace SeleniumTrainingCenter.Pages
                 return false;
             }
         }
+
         public AlertPage ConfirmAlert()
         {
             _driver.SwitchTo().Alert().Accept();
 
             return this;
         }
+
         public AlertPage ConfirmAlert(string text)
         {
             _driver.SwitchTo().Alert().SendKeys(text);
@@ -68,16 +72,19 @@ namespace SeleniumTrainingCenter.Pages
 
             return this;
         }
+
         public AlertPage CancelAlert()
         {
             _driver.SwitchTo().Alert().Dismiss();
 
             return this;
         }
+
         public string GetConfirmBoxAnser(string xPath)
         {
             return GetElementByXPath(xPath).Text;
         }
+
         public AlertPage(IWebDriver driver, string url) : base(driver, url)
         {
         }

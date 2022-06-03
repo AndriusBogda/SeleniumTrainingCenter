@@ -15,6 +15,7 @@ namespace SeleniumTrainingCenter.Pages
 
             return this;
         }
+
         public DropdownPage(IWebDriver driver, string url) : base(driver, url)
         {
         }

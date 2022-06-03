@@ -12,6 +12,7 @@ namespace SeleniumTrainingCenter.Pages
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
             return wait.Until(ExpectedConditions.TextToBePresentInElement(GetElementByXPath(xPath), text));
         }
+
         public bool HasDynamicDataTextReachedValue(string xPath, int value)
         {
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(20));
@@ -23,12 +24,14 @@ namespace SeleniumTrainingCenter.Pages
                     return true;
                 });
         }
+
         public DynamicDataPage GenerateNewDataByButton(string xPath)
         {
             GetElementByXPath(xPath).Click();
 
             return this;
         }
+
         public bool IsDynamicElementLoaded(string xPath)
         {
             try
@@ -42,12 +45,14 @@ namespace SeleniumTrainingCenter.Pages
                 return false;
             }
         }
+
         public DynamicDataPage Refresh()
         {
             _driver.Navigate().Refresh();
 
             return this;
         }
+
         public DynamicDataPage(IWebDriver driver, string url) : base(driver, url)
         {
         }
