@@ -31,6 +31,19 @@ namespace SeleniumTrainingCenter.PageObjects
             }
         }
 
+        public void TakeScreenshot(string path)
+        {
+            try
+            {
+                Screenshot ss = ((ITakesScreenshot)_driver).GetScreenshot();
+                ss.SaveAsFile($"{path}.jpg");
+            }
+            catch
+            {
+                throw new ArgumentException();
+            }
+        }
+
         public BasePage(IWebDriver driver)
         {
             _driver = driver;

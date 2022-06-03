@@ -11,6 +11,7 @@ namespace SeleniumTrainingCenter.Tests
         string _password = "Qwe123rty456!";
 
         string YANDEX_MAIL_URL = @"https://mail.yandex.com/";
+        string YANDEX_HOME_URL = @"https://yandex.by/";
 
         [Test]
         public void TestLogin()
