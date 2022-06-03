@@ -1,11 +1,12 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using SeleniumTrainingCenter.PageObjects.PageInterfaces;
 using System;
 
 namespace SeleniumTrainingCenter.PageObjects
 {
-    public class PageBase
+    public class BasePage : IPage
     {
         protected IWebDriver _driver;
 
@@ -16,13 +17,27 @@ namespace SeleniumTrainingCenter.PageObjects
             return wait.Until(ExpectedConditions.ElementIsVisible(by));
         }
 
-        public PageBase(IWebDriver driver)
+        public bool DoesElementExist(string xPath)
+        {
+            try
+            {
+                GetElement(By.XPath(xPath));
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public BasePage(IWebDriver driver)
         {
             _driver = driver;
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
 
-        public PageBase(IWebDriver driver, string url) : this(driver)
+        public BasePage(IWebDriver driver, string url) : this(driver)
         {
             driver.Navigate().GoToUrl(url);
         }

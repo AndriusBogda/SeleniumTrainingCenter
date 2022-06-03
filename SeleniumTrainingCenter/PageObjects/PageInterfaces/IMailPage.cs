@@ -1,6 +1,6 @@
 ﻿namespace SeleniumTrainingCenter.PageObjects.PageInterfaces
 {
-    public interface IMailPage
+    public interface IMailPage : IPage
     {
         IMailPage Login(string email, string password);
 
