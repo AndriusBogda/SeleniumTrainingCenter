@@ -21,7 +21,7 @@ namespace SeleniumTrainingCenter.Tests
 
             var loggedInYandex = loginPage.Login(_mail, _password);
 
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(loggedInYandex.DoesElementExist(INBOX_BUTTON));
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(loggedInYandex.DoesElementExist(INBOX_BUTTON), "Could not find Inbox button in Yandex mail");
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace SeleniumTrainingCenter.Tests
             var loggedInYandex = loginPage.Login(_mail, _password);
             var loggedOutYandex = loggedInYandex.Logout();
 
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(loggedOutYandex.DoesElementExist(YANDEX_TITLE));
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(loggedOutYandex.DoesElementExist(YANDEX_TITLE), "Could not find Title in Yandex login page");
         }
     }
 }
