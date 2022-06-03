@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using SeleniumTrainingCenter.PageObjects;
+using System.IO;
+using System;
 
 namespace SeleniumTrainingCenter.Tests
 {
@@ -10,8 +12,19 @@ namespace SeleniumTrainingCenter.Tests
         string _mail = "SeleniumTestAndrius";
         string _password = "Qwe123rty456!";
 
+        static string _projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+        static string _screenshotPath = @$"{_projectDirectory}\Screenshots\";
+
         string YANDEX_MAIL_URL = @"https://mail.yandex.com/";
         string YANDEX_HOME_URL = @"https://yandex.by/";
+
+        [Test]
+        public void TestScreenshot()
+        {
+            var yandexHome = new BasePage(Driver, YANDEX_HOME_URL);
+
+            yandexHome.TakeScreenshot(_screenshotPath);
+        }
 
         [Test]
         public void TestLogin()
