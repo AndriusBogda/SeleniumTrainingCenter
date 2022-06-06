@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 
 namespace SeleniumTrainingCenter.Tests
@@ -18,11 +19,11 @@ namespace SeleniumTrainingCenter.Tests
         {
             try
             {
-                _driver = new RemoteWebDriver(@"http://localhost:4444/wd/hub/", DesiredCapabilities.chrome());
+                _driver = new RemoteWebDriver(new System.Uri("http://localhost:4444/wd/hub/"), new ChromeOptions());
             }
             catch
             {
-                throw new Exception("wrong url for remote web driver");
+                throw new System.Exception("wrong url for remote web driver");
             }
         }
 

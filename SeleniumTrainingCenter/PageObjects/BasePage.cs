@@ -40,7 +40,7 @@ namespace SeleniumTrainingCenter.PageObjects
             }
             catch
             {
-                throw new ArgumentException();
+                throw new ArgumentException("wrong given path");
             }
         }
 
