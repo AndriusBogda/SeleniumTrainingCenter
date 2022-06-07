@@ -1,3 +1,4 @@
+using Allure.Commons;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -11,6 +12,12 @@ namespace SeleniumTrainingCenter.Tests
         protected static IWebDriver Driver
         {
             get => _driver;
+        }
+
+        [OneTimeSetUp]
+        public void OneTimeSetup()
+        {
+            AllureLifecycle.Instance.CleanupResultDirectory();
         }
 
         [SetUp]
