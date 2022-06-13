@@ -10,7 +10,7 @@ namespace SeleniumTrainingCenter.Tests
     public class SelenoidGoogleTest : BaseTest
     {
         static readonly string _projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-        static readonly string _screenshotPath = @$"{_projectDirectory}\Screenshots\";
+        static readonly string _screenshotPath = @$"{_projectDirectory}\Screenshots";
 
         string GOOGLE_HOME_URL = @"https://google.com";
 
@@ -20,8 +20,7 @@ namespace SeleniumTrainingCenter.Tests
             var SEARCH_INPUT = "//*[@name='q']";
 
             var homePage = new BasePage(Driver, GOOGLE_HOME_URL);
-            // Can not use _screenshotPath here, it will not work, so I used hard coded path.
-            homePage.TakeScreenshot(@"C:\Users\AndriusBogda\Desktop\");
+            homePage.TakeScreenshot(_screenshotPath);
 
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(homePage.DoesElementExist(SEARCH_INPUT), "Could not find search bar in google home page");
         }

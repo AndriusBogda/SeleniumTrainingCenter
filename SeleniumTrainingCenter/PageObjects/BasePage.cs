@@ -36,7 +36,7 @@ namespace SeleniumTrainingCenter.PageObjects
             try
             {
                 Screenshot ss = ((ITakesScreenshot)_driver).GetScreenshot();
-                ss.SaveAsFile($"{path}.jpg");
+                ss.SaveAsFile($"{path}ss.jpg");
             }
             catch
             {
