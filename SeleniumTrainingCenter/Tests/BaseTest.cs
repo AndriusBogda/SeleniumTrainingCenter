@@ -17,7 +17,6 @@ namespace SeleniumTrainingCenter.Tests
         public static void Setup()
         {
             _driver = new ChromeDriver();
-
             _driver.Manage().Window.Maximize();
         }
 
