@@ -15,8 +15,7 @@ namespace SeleniumTrainingCenter.Tests
             var SEARCH_INPUT = "//*[@name='q']";
 
             var homePage = new BasePage(Driver, GOOGLE_HOME_URL);
-            // Can not use _screenshotPath here, it will not work, so I used hard coded path.
-            homePage.TakeScreenshot(@"C:\Users\AndriusBogda\Desktop\");
+            homePage.TakeScreenshot(SSPath);
 
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(homePage.DoesElementExist(SEARCH_INPUT), "Could not find search bar in google home page");
         }

@@ -10,11 +10,18 @@ namespace SeleniumTrainingCenter.Tests
     {
         private static IWebDriver _driver;
 
+        private readonly string _projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+        private readonly string _screenshotPath = @$"{_projectDirectory}\Screenshots";
+
         protected static IWebDriver Driver
         {
             get => _driver;
         }
 
+        protected string SSPath
+        {
+            get => _screenshotPath;
+        }
         //[SetUp]
         protected static void Setup(DriverOptions driverOptions)
         {
